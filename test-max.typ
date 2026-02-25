@@ -181,6 +181,29 @@ result = db.aql.execute("""
   image("arango-logo-stack.png", width: 100%),
 )
 
+// Light slide with title
+
+#light-slide(title: [Key Strengths at a Glance])[
+  #grid(
+    columns: (1fr, 1fr),
+    column-gutter: 20pt,
+    row-gutter: 16pt,
+    arango-card(title: "Multi-model")[
+      One engine for *documents*, *graphs*, and *key-value* — no ETL between silos.
+    ],
+    arango-card(title: "Scalability")[
+      Horizontal scale-out with *smart sharding* keeps graph traversals local.
+    ],
+    arango-card(title: "ArangoSearch")[
+      Full-text and *vector search* built in — no separate search cluster needed.
+    ],
+    arango-card(title: "ACID Transactions")[
+      Multi-document and multi-collection *transactions* across a distributed cluster.
+    ],
+  )
+]
+
+
 // Closing slide
 
 #closing-slide(

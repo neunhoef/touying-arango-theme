@@ -218,6 +218,34 @@
   touying-slide(self: self, body)
 })
 
+// Light-background slide with a title bar (arango-light-bg + dark title strip)
+#let light-slide(title: none, body) = touying-slide-wrapper(self => {
+  let slide-body = {
+    set page(fill: arango-light-bg, margin: 0pt)
+    set text(fill: arango-text, font: "Urbanist")
+    block(width: 100%, height: 100%)[
+      // Title bar
+      #if title != none {
+        block(
+          width: 100%,
+          fill: arango-dark,
+          inset: (x: 60pt, y: 18pt),
+        )[
+          #text(size: 28pt, weight: "bold", fill: arango-lime)[#title]
+        ]
+      }
+      // Content area
+      #block(
+        width: 100%,
+        inset: (x: 60pt, top: 28pt, bottom: 50pt),
+      )[
+        #body
+      ]
+    ]
+  }
+  touying-slide(self: self, slide-body)
+})
+
 // ── Theme registration ───────────────────────────────────────────
 #let arango-theme(
   aspect-ratio: "16-9",
