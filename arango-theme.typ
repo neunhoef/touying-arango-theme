@@ -44,6 +44,7 @@
       fill: arango-light-bg,
       inset: 16pt,
     )[
+      #v(-1cm)
       #body-content
     ]
   ]
@@ -202,8 +203,6 @@
       #if subtitle != none {
         v(20pt)
         text(size: 24pt, fill: arango-lime)[#subtitle]
-        linebreak()
-        text(size: 14pt, fill: white.darken(30%), style: "italic")[for Enterprise AI]
       }
       #v(30pt)
       #if logo != none {
@@ -239,6 +238,7 @@
         width: 100%,
         inset: (x: 60pt, top: 28pt, bottom: 50pt),
       )[
+        #v(-1cm)
         #body
       ]
     ]
