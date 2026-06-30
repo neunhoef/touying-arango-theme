@@ -218,7 +218,10 @@
 })
 
 // Light-background slide with a title bar (arango-light-bg + dark title strip)
-#let light-slide(title: none, body) = touying-slide-wrapper(self => {
+#let light-slide(title: utils.display-current-heading(
+          setting: utils.fit-to-width.with(grow: false, 100%),
+          level: 2,
+        ), body) = touying-slide-wrapper(self => {
   let slide-body = {
     set page(fill: arango-light-bg, margin: 0pt)
     set text(fill: arango-text, font: "Urbanist")
